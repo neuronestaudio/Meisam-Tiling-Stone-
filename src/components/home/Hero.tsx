@@ -37,8 +37,9 @@ export function Hero() {
               transition={{ duration: 0.6 }}
             >
               {/* Company Name */}
-              <h1 className="mb-8 text-6xl font-bold leading-tight text-white sm:text-8xl lg:text-9xl">
-                MEISAM TILING & STONE
+              <h1 className="mb-8 font-bold leading-tight text-white">
+                <span className="block text-6xl sm:text-8xl lg:text-9xl">MEISAM</span>
+                <span className="block text-3xl sm:text-4xl lg:text-5xl">TILING & STONE</span>
               </h1>
 
               {/* Pre-headline badge */}
