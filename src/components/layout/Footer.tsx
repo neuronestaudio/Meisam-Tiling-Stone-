@@ -37,12 +37,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <span className="text-lg font-bold text-primary">NZI</span>
-              </div>
+              <img src="/Meisan_-removebg-preview.png" alt="Meisam Tiling & Stone" className="h-10 w-10" />
               <div>
-                <span className="font-bold text-primary-foreground">NZI Tiling</span>
-                <span className="block text-xs text-primary-foreground/70">& Waterproofing</span>
+                <span className="font-bold text-primary-foreground">Meisam Tiling</span>
+                <span className="block text-xs text-primary-foreground/70">& Stone</span>
               </div>
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-primary-foreground/80">

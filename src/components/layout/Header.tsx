@@ -55,15 +55,13 @@ export function Header() {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <span className="text-lg font-bold text-primary">NZI</span>
-              </div>
+              <img src="/Meisan_-removebg-preview.png" alt="Meisam Tiling & Stone" className="h-10 w-10" />
               <div className="hidden sm:block">
                 <span className={`font-bold ${isScrolled ? "text-foreground" : "text-white"}`}>
-                  NZI Tiling
+                  Meisam Tiling
                 </span>
                 <span className={`block text-xs ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
-                  & Waterproofing
+                  & Stone
                 </span>
               </div>
             </Link>

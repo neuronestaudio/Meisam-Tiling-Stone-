@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Phone, Shield, Award, CheckCircle } from "lucide-react";
+import { Phone, Shield, Award, CheckCircle, X } from "lucide-react";
+import { useState } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/Bathroom_Animation_Video_For_Tiling.mp4";
 
@@ -11,6 +12,8 @@ const trustBadges = [
 ];
 
 export function Hero() {
+  const [showQuoteForm, setShowQuoteForm] = useState(true);
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Video (with image fallback) */}
@@ -26,7 +29,7 @@ export function Hero() {
         {/* Optional: add a WebM source if available */}
         {/* <source src="/hero.webm" type="video/webm" /> */}
       </video>
-      <div className="absolute inset-0 hero-bg opacity-90" />
+      <div className="absolute inset-0 hero-bg opacity-70" />
 
       {/* Content */}
       <div className="section-container relative z-10 flex min-h-screen items-center pb-20 pt-32">
@@ -87,6 +90,67 @@ export function Hero() {
         <span className="text-xs uppercase tracking-wider">Scroll</span>
         <div className="h-12 w-0.5 rounded-full bg-gradient-to-b from-white/40 to-transparent" />
       </motion.div>
+
+      {/* Quote Form Popup - Right Side */}
+      {showQuoteForm && (
+        <motion.div
+          className="absolute right-4 top-48 z-40 w-full max-w-sm rounded-lg bg-white p-6 shadow-2xl sm:right-6 md:right-8 lg:w-80"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="mb-4 flex items-center justify-between">
+            <h3 className="text-xl font-bold text-foreground">Free Quote</h3>
+            <button
+              onClick={() => setShowQuoteForm(false)}
+              className="rounded-full p-1 hover:bg-gray-100"
+            >
+              <X className="h-5 w-5 text-foreground" />
+            </button>
+          </div>
+
+          <form className="space-y-4">
+            <div>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-accent focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-accent focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-accent focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Describe your project..."
+                rows={3}
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-accent focus:outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full rounded-lg bg-accent px-4 py-2 font-semibold text-white hover:bg-accent/90"
+            >
+              Get Free Quote
+            </button>
+          </form>
+        </motion.div>
+      )}
     </section>
   );
 }
