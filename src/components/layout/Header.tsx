@@ -56,14 +56,9 @@ export function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <img src="/Meisan_-removebg-preview.png" alt="Meisam Tiling & Stone" className="h-10 w-10" />
-              <div className="hidden sm:block">
-                <span className={`font-bold ${isScrolled ? "text-foreground" : "text-white"}`}>
-                  Meisam Tiling
-                </span>
-                <span className={`block text-xs ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
-                  & Stone
-                </span>
-              </div>
+              <span className={`hidden sm:block text-lg font-bold ${isScrolled ? "text-foreground" : "text-white"}`}>
+                Meisam Tiling & Stone
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
